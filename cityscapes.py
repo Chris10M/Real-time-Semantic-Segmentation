@@ -117,7 +117,7 @@ class CityScapes(Dataset):
         label = torch.from_numpy(label)
         label = torch.squeeze(label, 0)
 
-        if self.mode == 'val':
+        if self.mode != 'train':
             return impth, img, label
 
         return img, label
