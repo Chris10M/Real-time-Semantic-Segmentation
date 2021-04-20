@@ -1,6 +1,14 @@
-# mobilenetv3-small-rt-segmentation-
 
-This repository contains the implementation for dual-path network with mobilenetv3-small backbone. I have used PSP module as the context aggregation block.    
+# Mobilenetv3 real-time segmentation
+[![python-image]][python-url]
+[![pytorch-image]][pytorch-url]
+[![lic-image]][lic-url]
+
+This repository contains the implementation for a dual-path network with [mobilenetv3-small](https://arxiv.org/abs/1905.02244) backbone. I have used [PSP module](https://arxiv.org/abs/1612.01105) as the context aggregation block.    
+
+<p align="center">
+<img src="images/image.png" alt="image" width="800"/></br>
+</p>
 
 ## Requirements
 
@@ -8,6 +16,9 @@ The Cityscapes dataset, which can be downloaded  [here](https://www.cityscapes-d
 
 NOTE: The code has been tested in Ubuntu 18.04, and **requirements.txt** contains all the nessary packages.
 
+
+## Usage
+-----------------
 ### Train
 To train the model,  we run train.py
 ```
@@ -28,32 +39,31 @@ To visulaize the results,  we run demo.py.
 python3 demo.py --root Cityscapes_root_directory --model_path saved_model_path_to_run_demo.
 ``` 
 
-### Task 2 
-For task 2, we use the model configuration as mentioned in **TABLE IV** of [R2U-Net](https://arxiv.org/pdf/1802.06955.pdf). 
+## Result
+- **Cityscapes**
 
-The pretrained model is available [here](https://www.mediafire.com/file/ufma51z9c38kmdc/task2.pth/file) [4.36 MB]
+| Config   		        |  Params(M) | RES | FLOPS (G) | FP32(fps) | FP16(fps)|  mIoU  |
+| :-------:             | :--: | :----: | :----: | :---: | :-------: | :------: | :------: | 
+| MV3-Small + PSP + FFM |   1.74 |2048x1024 | 11.63   |  39.85    |   54.50  |  0.662 |
+| MV3-Small + PSP + FFM |   1.74 |1024x512  |  2.91   |  78.79    |   71.74  |  0.615 | 
 
-And, a prediction of Task-2,
-<p align="center">
-<img src="images/task2/task2.png" alt="task2" width="800"/></br>
-</p>
 
-### Task 3
+Note: Params and FLOPS are got using [torchstat](https://github.com/Swall0w/torchstat). 
 
-Our network achieves a mIoU of  **64.32**  on the  [Cityscapes](https://www.cityscapes-dataset.com/)  val set without any pretrained model. And for an input resolution of 2048x1024, our network can run at the speed of  **21.8 FPS**  on a single RTX 2070 GPU.
+## To Do
+- [ ] Add mobilenetv3 large
+- [ ] Improve performance. 
 
-Model architecture of Task 3,
- 
- <p align="center">
-<img src="images/task3/network.png" alt="task3model" width="800"/></br>
-</p>
 
-The pretrained model is available [here](https://www.mediafire.com/file/bwbc80xz79m8dra/task3.pth/file) [13.07 MB]
+<!--
+[![python-image]][python-url]
+[![pytorch-image]][pytorch-url]
+[![lic-image]][lic-url]
+-->
 
-And, a prediction of Task-3,
-<p align="center">
-<img src="images/task3/task3.png" alt="task3" width="800"/></br>
-</p>
-
-## Acknowledgement
-Training code inpired from  [CoinCheung/BiSeNet](https://github.com/CoinCheung/BiSeNet)
+[python-image]: https://img.shields.io/badge/Python-3.x-ff69b4.svg
+[python-url]: https://www.python.org/
+[pytorch-image]: https://img.shields.io/badge/PyTorch-1.x-2BAF2B.svg
+[pytorch-url]: https://pytorch.org/
+[lic-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[lic-url]: https://github.com/Tramac/mobilenetv3-segmentation/blob/master/LICENSE
