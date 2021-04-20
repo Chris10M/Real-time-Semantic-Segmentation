@@ -29,7 +29,6 @@ class SegNet(nn.Module):
         self.seg_head = SegmentationHead(96 + 96, n_classes, act_layer=act_layer, scale=8, expansion=2)
         
     def forward(self, x):
-        # print(x.shape)
         '''
         2048, 1024   
         1024, 512    / 2
@@ -66,10 +65,8 @@ class SegNet(nn.Module):
 
 
 def get_network(n_classes):
-    # net = BiSeNet(n_classes=n_classes)
     net = SegNet(n_classes=n_classes)
 
-    
     if torch.cuda.is_available():
         net = net.cuda()
 
