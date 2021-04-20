@@ -53,7 +53,7 @@ The FPS metrics are evaluated on a RTX2070.
 
 | Config   		          |  Params(M) | RES      | FLOPS (G) | FP32(fps) | FP16(fps)|  mIoU    |      model      |
 | :-------:             | :--:       | :----:   | :----:    | :---:     | :-------:| :------: |    :------:     |  
-| MV3-Small + PSP + FFM |   1.74     |2048x1024 | 11.63     |  39.85    |   54.50  |  0.662   | [file (6.86MB)] |
+| MV3-Small + PSP + FFM |   1.74     |2048x1024 | 11.63     |  40.85    |   54.50  |  0.662   | [file (6.86MB)] |
 | MV3-Small + PSP + FFM |   1.74     |1024x512  |  2.91     |  78.79    |   71.74  |  0.615   | [file (6.86MB)] |
 
 
