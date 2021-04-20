@@ -42,10 +42,10 @@ python3 demo.py --root Cityscapes_root_directory --model_path saved_model_path_t
 ## Result
 - **Cityscapes**
 
-| Config   		        |  Params(M) | RES | FLOPS (G) | FP32(fps) | FP16(fps)|  mIoU  |
-| :-------:             | :--: | :----: | :----: | :---: | :-------: | :------: | :------: | 
-| MV3-Small + PSP + FFM |   1.74 |2048x1024 | 11.63   |  39.85    |   54.50  |  0.662 |
-| MV3-Small + PSP + FFM |   1.74 |1024x512  |  2.91   |  78.79    |   71.74  |  0.615 | 
+| Config   		          |  Params(M) | RES      | FLOPS (G) | FP32(fps) | FP16(fps)|  mIoU    |
+| :-------:             | :--:       | :----:   | :----:    | :---:     | :-------:| :------: |  
+| MV3-Small + PSP + FFM |   1.74     |2048x1024 | 11.63     |  39.85    |   54.50  |  0.662   |
+| MV3-Small + PSP + FFM |   1.74     |1024x512  |  2.91     |  78.79    |   71.74  |  0.615   | 
 
 
 Note: Params and FLOPS are got using [torchstat](https://github.com/Swall0w/torchstat). 
@@ -53,6 +53,7 @@ Note: Params and FLOPS are got using [torchstat](https://github.com/Swall0w/torc
 ## To Do
 - [ ] Add mobilenetv3 large
 - [ ] Improve performance. 
+- [ ] Add more configurations support. 
 
 
 <!--
