@@ -31,6 +31,13 @@ The trainer, also evaluates the model for every save and logs the results, but i
 python3 evaluate.py --root Cityscapes_root_directory --model_path saved_model_path_to_evaluate.
 ``` 
 
+### Evaluate Server
+The evaluate_server.py evaluates the model, and store the segmentation masks in *cityscapes_results* folder created in the root path of the script. This is used for submiting the results to [Cityscapes](https://www.cityscapes-dataset.com/) evaluation server.
+
+```
+python3 evaluate_server.py --root Cityscapes_root_directory --model_path saved_model_path_to_evaluate.
+``` 
+
 ### Demo
 
 To visulaize the results,  we run demo.py.
@@ -42,10 +49,10 @@ python3 demo.py --root Cityscapes_root_directory --model_path saved_model_path_t
 ## Result
 - **Cityscapes**
 
-| Config   		          |  Params(M) | RES      | FLOPS (G) | FP32(fps) | FP16(fps)|  mIoU    |
-| :-------:             | :--:       | :----:   | :----:    | :---:     | :-------:| :------: |  
-| MV3-Small + PSP + FFM |   1.74     |2048x1024 | 11.63     |  39.85    |   54.50  |  0.662   |
-| MV3-Small + PSP + FFM |   1.74     |1024x512  |  2.91     |  78.79    |   71.74  |  0.615   | 
+| Config   		          |  Params(M) | RES      | FLOPS (G) | FP32(fps) | FP16(fps)|  mIoU    |      model      |
+| :-------:             | :--:       | :----:   | :----:    | :---:     | :-------:| :------: |    :------:     |  
+| MV3-Small + PSP + FFM |   1.74     |2048x1024 | 11.63     |  39.85    |   54.50  |  0.662   | [file (6.86MB)] |
+| MV3-Small + PSP + FFM |   1.74     |1024x512  |  2.91     |  78.79    |   71.74  |  0.615   | [file (6.86MB)] |
 
 
 Note: Params and FLOPS are got using [torchstat](https://github.com/Swall0w/torchstat). 
@@ -61,6 +68,8 @@ Note: Params and FLOPS are got using [torchstat](https://github.com/Swall0w/torc
 [![pytorch-image]][pytorch-url]
 [![lic-image]][lic-url]
 -->
+
+[file (6.86MB)]: https://www.mediafire.com/file/lqf9bjvjqs0bfli/MobilenetV3_small_segmentation.pth/file
 
 [python-image]: https://img.shields.io/badge/Python-3.x-ff69b4.svg
 [python-url]: https://www.python.org/
