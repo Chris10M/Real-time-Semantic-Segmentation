@@ -47,6 +47,8 @@ python3 demo.py --root Cityscapes_root_directory --model_path saved_model_path_t
 ``` 
 
 ## Result
+The FPS metrics are evaluated on a RTX2070. 
+
 - **Cityscapes**
 
 | Config   		          |  Params(M) | RES      | FLOPS (G) | FP32(fps) | FP16(fps)|  mIoU    |      model      |
