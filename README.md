@@ -55,7 +55,7 @@ The FPS metrics are evaluated on a RTX2070. And evaluation was done by single sc
 | :-------:             | :--:       | :----:   | :----:    | :---:     | :-------:| :------:          | :------:    | :------:    |     :------:    |  
 | MV3-Small + PSP + FFM |   1.74     |2048x1024 | 11.63     |  40.85    |   54.50  |    train          |  0.662      |    0.6388   | [file (6.86MB)](https://www.mediafire.com/file/lqf9bjvjqs0bfli/MobilenetV3_small_segmentation.pth/file) |
 | MV3-Small + PSP + FFM |   1.74     |1024x512  |  2.91     |  78.79    |   71.74  |    train          |  0.615      |     -       | [file (6.86MB)](https://www.mediafire.com/file/lqf9bjvjqs0bfli/MobilenetV3_small_segmentation.pth/file) |
-| MV3-Small + PSP + FFM |   1.74     |2048x1024 | 11.63     |  40.85    |   54.50  |    train + val    |  0.717      |             | [file (6.86MB)](https://www.mediafire.com/file/tlj3jnso2707x5k/MobilenetV3_small_segmentation_80k.pth/file) |
+| MV3-Small + PSP + FFM |   1.74     |2048x1024 | 11.63     |  40.85    |   54.50  |    train + val    |  0.717      |    0.6559       | [file (6.86MB)](https://www.mediafire.com/file/tlj3jnso2707x5k/MobilenetV3_small_segmentation_80k.pth/file) |
 | MV3-Small + PSP + FFM |   1.74     |1024x512  |  2.91     |  78.79    |   71.74  |    train + val    |  0.646      |     -       | [file (6.86MB)](https://www.mediafire.com/file/tlj3jnso2707x5k/MobilenetV3_small_segmentation_80k.pth/file) |
 
 Note: Params and FLOPS are got using [torchstat](https://github.com/Swall0w/torchstat). 
