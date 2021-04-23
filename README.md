@@ -1,10 +1,10 @@
 
-# Mobilenetv3 real-time segmentation
+# MobileNetV3 real-time semantic segmentation
 [![python-image]][python-url]
 [![pytorch-image]][pytorch-url]
 [![lic-image]][lic-url]
 
-This repository contains the implementation for a dual-path network with [mobilenetv3-small](https://arxiv.org/abs/1905.02244) backbone. I have used [PSP module](https://arxiv.org/abs/1612.01105) as the context aggregation block.    
+This repository contains the implementation for a dual-path network with [mobilenetv3-small](https://arxiv.org/abs/1905.02244) backbone. I have used [PSP module](https://arxiv.org/abs/1612.01105) as the context aggregation block. 
 
 <p align="center">
 <img src="images/image.png" alt="image" width="800"/></br>
