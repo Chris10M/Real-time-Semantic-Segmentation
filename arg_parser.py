@@ -37,3 +37,17 @@ def evaluate():
     args = parser.parse_args()
 
     return args
+
+
+def demo_single():
+    parser = argparse.ArgumentParser(description='Demo for Cityscapes')
+    
+    parser.add_argument('--model_path', dest='saved_model', required=True,
+                        help='path of saved_model')
+
+    parser.add_argument('--img_path', dest='img_path', required=False,
+                        help='path of image to infer', default="images/demo.png")
+
+    args = parser.parse_args()
+
+    return args

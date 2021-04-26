@@ -2,6 +2,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
 
+from logging import Logger
 import imutils
 import cv2
 import os.path as osp
@@ -36,7 +37,11 @@ class CityScapes(Dataset):
         self.imgs = {}
         imgnames = []
         impth = osp.join(rootpth, 'leftImg8bit', mode)
-        folders = os.listdir(impth)
+
+        folders = list()
+        try: folders = os.listdir(impth)
+        except FileNotFoundError: pass
+
         for fd in folders:
             fdpth = osp.join(impth, fd)
             im_names = os.listdir(fdpth)
@@ -49,7 +54,11 @@ class CityScapes(Dataset):
         self.labels = {}
         gtnames = []
         gtpth = osp.join(rootpth, 'gtFine', mode)
-        folders = os.listdir(gtpth)
+        
+        folders = list()
+        try: folders = os.listdir(gtpth)
+        except FileNotFoundError: pass
+
         for fd in folders:
             fdpth = osp.join(gtpth, fd)
             lbnames = os.listdir(fdpth)
@@ -90,6 +99,9 @@ class CityScapes(Dataset):
             if v < 0 or v == self.ignore_lb: continue
             
             self.num_classes.add(v)
+        
+        if self.len == 0:
+            Logger("cityscapes").error("\nCityscapes path not proper. Length of dataset is 0.\n")
 
     def __len__(self):
         return self.len

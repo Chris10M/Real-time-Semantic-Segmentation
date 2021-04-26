@@ -46,6 +46,14 @@ To visulaize the results,  we run demo.py.
 python3 demo.py --root Cityscapes_root_directory --model_path saved_model_path_to_run_demo.
 ``` 
 
+### Demo Single Image
+
+To run inference on a single image,  we run demo_single.py. Can run inference to any image given by img_path.
+
+```
+python3 demo_single.py --model_path saved_model_path_to_run_demo. --img_path optional_param, default is images/demo.png. 
+``` 
+
 ## Result
 The FPS metrics are evaluated on a RTX2070. And evaluation was done by single scale input images. 
 
